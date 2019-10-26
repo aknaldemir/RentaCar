@@ -22,7 +22,7 @@ namespace RentACar.Dal.Concrete
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
 
             modelBuilder.Entity<Musteri>()
-                .Property(m=>m.TcNo)
+                .Property(m => m.TcNo)
                 .HasMaxLength(11);
 
             modelBuilder.Entity<Musteri>()
@@ -56,7 +56,7 @@ namespace RentACar.Dal.Concrete
             modelBuilder.Entity<Marka>().Property(m => m.MarkaAdi).IsRequired().HasMaxLength(20);
             modelBuilder.Entity<Resim>().Property(m => m.ResimAdi).IsRequired().HasMaxLength(50);
 
-            
+
 
 
 

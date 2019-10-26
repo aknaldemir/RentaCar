@@ -8,6 +8,7 @@ namespace RentACar.Entity
 {
     public class Rezervasyon
     {
+        public int RezervasyonId { get; set; }
         public int MusteriId { get; set; }
         public int AracId { get; set; }
         public DateTime CikisTarihi { get; set; }
