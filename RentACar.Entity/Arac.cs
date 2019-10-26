@@ -19,9 +19,13 @@ namespace RentACar.Entity
         ///dfdfdfdfdfdf
         public int MyProperty { get; set; }
 
+<<<<<<< HEAD
         public string Degisiklik { get; set; }
 
         public int deneeeeeeee { get; set; }
 
+=======
+        public string deneme { get; set; }
+>>>>>>> 3fb229801f28f9adb4c51c25ae67c845f9700c0e
     }
 }
