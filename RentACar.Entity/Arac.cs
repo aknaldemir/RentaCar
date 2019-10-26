@@ -16,7 +16,7 @@ namespace RentACar.Entity
         public int ModelId { get; set; }
         public Model Model{ get; set; }
         public List<Resim> Resimler { get; set; }
-      
 
+        public string deneme { get; set; }
     }
 }
