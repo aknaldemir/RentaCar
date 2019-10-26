@@ -17,5 +17,7 @@ namespace RentACar.Entity
         public Model Model{ get; set; }
         public List<Resim> Resimler { get; set; }
 
+        public string Degisiklik { get; set; }
+
     }
 }
