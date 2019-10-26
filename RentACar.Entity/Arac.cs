@@ -16,6 +16,8 @@ namespace RentACar.Entity
         public int ModelId { get; set; }
         public Model Model{ get; set; }
         public List<Resim> Resimler { get; set; }
+        ///dfdfdfdfdfdf
+        public int MyProperty { get; set; }
 
     }
 }
