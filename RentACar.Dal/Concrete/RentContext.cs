@@ -48,6 +48,13 @@ namespace RentACar.Dal.Concrete
                 .Property(m => m.Parola)
                 .HasMaxLength(20)
                 .IsRequired();
+            modelBuilder.Entity<Arac>().Property(m => m.SasiNo).HasMaxLength(17).IsRequired();
+            modelBuilder.Entity<Arac>().Property(m => m.Kilometre).IsRequired();
+            modelBuilder.Entity<Arac>().Property(m => m.GunlukFiyat).IsRequired();
+            modelBuilder.Entity<Model>().Property(m => m.ModelAdi).IsRequired().HasMaxLength(20);
+            modelBuilder.Entity<Model>().Property(m => m.Yil).IsRequired();
+            modelBuilder.Entity<Marka>().Property(m => m.MarkaAdi).IsRequired().HasMaxLength(20);
+            modelBuilder.Entity<Resim>().Property(m => m.ResimAdi).IsRequired().HasMaxLength(50);
 
             
 
