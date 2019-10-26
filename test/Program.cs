@@ -1,23 +1,19 @@
-﻿using System.Collections.Generic;
+﻿using RentACar.Dal.Concrete;
 using RentACar.Entity;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
-namespace RentACar.Dal.Migrations
+namespace test
 {
-    using System;
-    using System.Data.Entity;
-    using System.Data.Entity.Migrations;
-    using System.Linq;
-
-    internal sealed class Configuration : DbMigrationsConfiguration<RentACar.Dal.Concrete.RentContext>
+    class Program
     {
-        public Configuration()
+        static void Main(string[] args)
         {
-            AutomaticMigrationsEnabled = false;
-        }
-
-        protected override void Seed(RentACar.Dal.Concrete.RentContext context)
-        {
-            List<Marka> markalar = new List<Marka>()
+            RentContext context=new RentContext();
+           /* List<Marka> markalar = new List<Marka>()
             {
                 new Marka(){MarkaAdi = "Opel"},
                 new Marka(){MarkaAdi = "Mercedes"},
@@ -26,7 +22,8 @@ namespace RentACar.Dal.Migrations
             };
 
             context.Markalar.AddRange(markalar);
-            context.SaveChanges();
+            context.SaveChanges();*/
+
 
             List<Model> modeller = new List<Model>()
             {
@@ -102,5 +99,5 @@ namespace RentACar.Dal.Migrations
 
             context.SaveChanges();
         }
-        }
+    }
 }

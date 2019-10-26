@@ -11,7 +11,7 @@ namespace RentACar.Entity
     {
         public int AracId { get; set; }
         public string SasiNo { get; set; }
-        public string Kilometre { get; set; }
+        public int Kilometre { get; set; }
         public decimal GunlukFiyat { get; set; }
         public int ModelId { get; set; }
         public Model Model{ get; set; }

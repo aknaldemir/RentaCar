@@ -16,6 +16,7 @@ namespace RentACar.Dal.Concrete
         public DbSet<Rezervasyon> Rezervasyonlar { get; set; }
         public DbSet<Model> Modeller { get; set; }
         public DbSet<Marka> Markalar { get; set; }
+        public DbSet<Resim> Resimler { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -55,13 +56,6 @@ namespace RentACar.Dal.Concrete
             modelBuilder.Entity<Model>().Property(m => m.Yil).IsRequired();
             modelBuilder.Entity<Marka>().Property(m => m.MarkaAdi).IsRequired().HasMaxLength(20);
             modelBuilder.Entity<Resim>().Property(m => m.ResimAdi).IsRequired().HasMaxLength(50);
-
-
-
-
-
-
-
 
 
             base.OnModelCreating(modelBuilder);

@@ -7,13 +7,13 @@ namespace RentACar.Dal.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.3.0")]
-    public sealed partial class InitApp : IMigrationMetadata
+    public sealed partial class UpdateTables : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(InitApp));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(UpdateTables));
         
         string IMigrationMetadata.Id
         {
-            get { return "201910261054510_InitApp"; }
+            get { return "201910261159089_UpdateTables"; }
         }
         
         string IMigrationMetadata.Source

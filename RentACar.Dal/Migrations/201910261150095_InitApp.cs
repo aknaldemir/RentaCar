@@ -13,10 +13,9 @@
                     {
                         AracId = c.Int(nullable: false, identity: true),
                         SasiNo = c.String(nullable: false, maxLength: 17),
-                        Kilometre = c.String(nullable: false),
+                        Kilometre = c.Int(nullable: false),
                         GunlukFiyat = c.Decimal(nullable: false, precision: 18, scale: 2),
                         ModelId = c.Int(nullable: false),
-                        deneme = c.String(),
                     })
                 .PrimaryKey(t => t.AracId)
                 .ForeignKey("dbo.Model", t => t.ModelId, cascadeDelete: true)

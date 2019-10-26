@@ -12,7 +12,7 @@ namespace RentACar.Entity
         public string TcNo { get; set; }
         public string Ad { get; set; }
         public string Soyad { get; set; }
-        public DateTime DogumTarihi { get; set; }
+        public DateTime? DogumTarihi { get; set; }
         public string Memleket { get; set; }
         public string Fotokopi { get; set; }
         public string Mail { get; set; }

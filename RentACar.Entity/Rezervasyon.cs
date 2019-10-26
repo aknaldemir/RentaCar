@@ -11,9 +11,9 @@ namespace RentACar.Entity
         public int RezervasyonId { get; set; }
         public int MusteriId { get; set; }
         public int AracId { get; set; }
-        public DateTime CikisTarihi { get; set; }
-        public DateTime DonusTarihi { get; set; }
-        public decimal ToplamFiyat { get; set; }
+        public DateTime? CikisTarihi { get; set; }
+        public DateTime? DonusTarihi { get; set; }
+        public decimal? ToplamFiyat { get; set; }
         public Musteri Musteri { get; set; }
         public Arac Arac { get; set; }
 
