@@ -8,7 +8,7 @@ using RentACar.Entity;
 
 namespace RentACar.Dal.Concrete
 {
-    public class ResimManager
+   /* public class ResimManager
     {
         private RentContext _context;
         public ResimManager()
@@ -41,5 +41,5 @@ namespace RentACar.Dal.Concrete
         {
             return _context.Resimler.Where(x => x.AracId == AracId).ToList();
         }
-    }
+    }*/
 }

@@ -11,6 +11,10 @@ namespace RentACar.Dal.Concrete
 {
     public class RentContext : DbContext
     {
+        public RentContext():base("RentContext")
+        {
+            
+        }
         public DbSet<Musteri> Musteriler { get; set; }
         public DbSet<Arac> Araclar { get; set; }
         public DbSet<Rezervasyon> Rezervasyonlar { get; set; }

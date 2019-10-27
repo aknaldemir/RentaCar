@@ -52,13 +52,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Concrete\ResimManager.cs" />
-    <Compile Include="Concrete\MusteriManager.cs" />
-    <Compile Include="Concrete\AracManager.cs" />
-    <Compile Include="Concrete\MarkaManager.cs" />
-    <Compile Include="Concrete\ModelManager.cs" />
+    <Compile Include="Concrete\ResimDal.cs" />
+    <Compile Include="Concrete\MusteriDal.cs" />
+    <Compile Include="Concrete\AracDal.cs" />
+    <Compile Include="Concrete\MarkaDal.cs" />
+    <Compile Include="Concrete\ModelDal.cs" />
     <Compile Include="Concrete\RentContext.cs" />
-    <Compile Include="Concrete\RezervasyonManager.cs" />
+    <Compile Include="Concrete\RezervasyonDal.cs" />
     <Compile Include="Migrations\201910261150095_InitApp.cs" />
     <Compile Include="Migrations\201910261150095_InitApp.designer.cs">
       <DependentUpon>201910261150095_InitApp.cs</DependentUpon>

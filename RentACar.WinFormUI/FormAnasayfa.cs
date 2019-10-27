@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RentACar.WinFormUI
 {
-    public partial class Form1 : Form
+    public partial class FormAnasayfa : Form
     {
-        public Form1()
+        public FormAnasayfa()
         {
             InitializeComponent();
         }

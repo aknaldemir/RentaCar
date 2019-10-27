@@ -1,6 +1,6 @@
 ﻿namespace RentACar.WinFormUI
 {
-    partial class Form1
+    partial class FormAnasayfa
     {
         /// <summary>
         /// Required designer variable.

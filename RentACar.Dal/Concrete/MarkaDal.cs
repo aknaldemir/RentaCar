@@ -8,10 +8,10 @@ using RentACar.Entity;
 
 namespace RentACar.Dal.Concrete
 {
-    public class MarkaManager
+    public class MarkaDal
     {
-        private RentContext _context;
-        public MarkaManager()
+        public RentContext _context;
+        public MarkaDal()
         {
             _context = new RentContext();
         }
@@ -25,8 +25,8 @@ namespace RentACar.Dal.Concrete
         }
         public int Update(Marka marka)
         {
-            Marka newMarka = _context.Markalar.FirstOrDefault(x => x.MarkaId == marka.MarkaId);
-            newMarka.MarkaAdi = marka.MarkaAdi;
+            Marka yeniMarka = _context.Markalar.Find(marka.MarkaId);
+            yeniMarka.MarkaAdi = marka.MarkaAdi;
             etkilenenKayit = _context.SaveChanges();
             return etkilenenKayit;
 
@@ -39,11 +39,11 @@ namespace RentACar.Dal.Concrete
         }
         public Marka GetById(int Id)
         {
-            return _context.Markalar.FirstOrDefault(x => x.MarkaId == Id);
+            return _context.Markalar.Find(Id);
         }
-        public List<Marka> GetAll()
+        public IQueryable<Marka> GetAll()
         {
-            return _context.Markalar.ToList();
+            return _context.Markalar.AsQueryable();
         }
     }
 }

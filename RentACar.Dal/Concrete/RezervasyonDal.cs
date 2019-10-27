@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace RentACar.Dal.Concrete
 {
-    public  class RezervasyonManager
+    public  class RezervasyonDal
     {
-        private RentContext _context;
-        public RezervasyonManager()
+        public RentContext _context;
+        public RezervasyonDal()
         {
             _context = new RentContext();
         }
@@ -23,12 +23,12 @@ namespace RentACar.Dal.Concrete
         }
         public int Update(Rezervasyon rezervasyon)
         {
-            Rezervasyon newRezervasyon = _context.Rezervasyonlar.FirstOrDefault(x => x.RezervasyonId == rezervasyon.RezervasyonId);
-            newRezervasyon.MusteriId = rezervasyon.MusteriId;
-            newRezervasyon.AracId = rezervasyon.AracId;
-            newRezervasyon.CikisTarihi = rezervasyon.CikisTarihi;
-            newRezervasyon.DonusTarihi = rezervasyon.DonusTarihi;
-            newRezervasyon.ToplamFiyat = rezervasyon.ToplamFiyat;
+            var yeniRezervasyon = _context.Rezervasyonlar.Find(rezervasyon.RezervasyonId);
+            yeniRezervasyon.MusteriId = rezervasyon.MusteriId;
+            yeniRezervasyon.AracId = rezervasyon.AracId;
+            yeniRezervasyon.CikisTarihi = rezervasyon.CikisTarihi;
+            yeniRezervasyon.DonusTarihi = rezervasyon.DonusTarihi;
+            yeniRezervasyon.ToplamFiyat = rezervasyon.ToplamFiyat;
             etkilenenKayit = _context.SaveChanges();
             return etkilenenKayit;
         }
@@ -40,11 +40,11 @@ namespace RentACar.Dal.Concrete
         }
         public Rezervasyon GetById(int Id)
         {
-            return _context.Rezervasyonlar.FirstOrDefault(x => x.RezervasyonId == Id);
+            return _context.Rezervasyonlar.Find(Id);
         }
-        public List<Rezervasyon> GetAll()
+        public IQueryable<Rezervasyon> GetAll()
         {
-            return _context.Rezervasyonlar.ToList();
+            return _context.Rezervasyonlar.AsQueryable();
         }
     }
 }

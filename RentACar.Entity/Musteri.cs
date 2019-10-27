@@ -17,6 +17,8 @@ namespace RentACar.Entity
         public string Fotokopi { get; set; }
         public string Mail { get; set; }
         public string Parola { get; set; }
+        public List<Rezervasyon> Rezervasyonlar { get; set; }
+
 
     }
 }

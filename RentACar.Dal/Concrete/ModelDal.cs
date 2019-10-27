@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace RentACar.Dal.Concrete
 {
-    public class ModelManager
+    public class ModelDal
     {
-        private RentContext _context;
-        public ModelManager()
+        public RentContext _context;
+        public ModelDal()
         {
             _context = new RentContext();
         }
@@ -24,9 +24,9 @@ namespace RentACar.Dal.Concrete
         }
         public int Update(Model model)
         {
-            Model newModel = _context.Modeller.FirstOrDefault(x => x.ModelId == model.ModelId);
-            newModel.ModelAdi = model.ModelAdi;
-            newModel.Yil = model.Yil;
+            Model yeniModel = _context.Modeller.Find(model.ModelId);
+            yeniModel.ModelAdi = model.ModelAdi;
+            yeniModel.Yil = model.Yil;
             etkilenenKayit = _context.SaveChanges();
             return etkilenenKayit;
 
@@ -39,11 +39,11 @@ namespace RentACar.Dal.Concrete
         }
         public Model GetById(int Id)
         {
-            return _context.Modeller.FirstOrDefault(x => x.ModelId == Id);
+            return _context.Modeller.Find(Id);
         }
-        public List<Model> GetAll()
+        public IQueryable<Model> GetAll()
         {
-            return _context.Modeller.ToList();
+            return _context.Modeller.AsQueryable();
         }
     }
 }

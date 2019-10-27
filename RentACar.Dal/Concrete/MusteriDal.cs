@@ -8,10 +8,10 @@ using RentACar.Entity;
 
 namespace RentACar.Dal.Concrete
 {
-    public class MusteriManager
+    public class MusteriDal
     {
-        private RentContext _context;
-        public MusteriManager()
+        public RentContext _context;
+        public MusteriDal()
         {
             _context = new RentContext();
         }
@@ -25,15 +25,15 @@ namespace RentACar.Dal.Concrete
         }
         public int Update(Musteri musteri)
         {
-            Musteri newMusteri = _context.Musteriler.FirstOrDefault(x => x.MusteriId == musteri.MusteriId);
-            newMusteri.Ad = musteri.Ad;
-            newMusteri.Soyad = musteri.Soyad;
-            newMusteri.Fotokopi = musteri.Fotokopi;
-            newMusteri.DogumTarihi = musteri.DogumTarihi;
-            newMusteri.Memleket = musteri.Memleket;
-            newMusteri.Mail = musteri.Mail;
-            newMusteri.Parola = musteri.Parola;
-            newMusteri.TcNo = musteri.TcNo;
+            var yeniMusteri = _context.Musteriler.Find(musteri.MusteriId);
+            yeniMusteri.Ad = musteri.Ad;
+            yeniMusteri.Soyad = musteri.Soyad;
+            yeniMusteri.Fotokopi = musteri.Fotokopi;
+            yeniMusteri.DogumTarihi = musteri.DogumTarihi;
+            yeniMusteri.Memleket = musteri.Memleket;
+            yeniMusteri.Mail = musteri.Mail;
+            yeniMusteri.Parola = musteri.Parola;
+            yeniMusteri.TcNo = musteri.TcNo;
 
             etkilenenKayit = _context.SaveChanges();
             return etkilenenKayit;
@@ -46,11 +46,11 @@ namespace RentACar.Dal.Concrete
         }
         public Musteri GetById(int Id)
         {
-            return _context.Musteriler.FirstOrDefault(x => x.MusteriId == Id);
+            return _context.Musteriler.Find(Id);
         }
-        public List<Musteri> GetAll()
+        public IQueryable<Musteri> GetAll()
         {
-            return _context.Musteriler.ToList();
+            return _context.Musteriler.AsQueryable();
         }
     }
 }
