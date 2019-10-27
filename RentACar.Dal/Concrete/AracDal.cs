@@ -12,7 +12,11 @@ namespace RentACar.Dal.Concrete
     public class AracDal
     {
         public RentContext _context;
+<<<<<<< HEAD:RentACar.Dal/Concrete/AracDal.cs
         public AracDal()
+=======
+        public AracManager()
+>>>>>>> 877dd7597863e8660702977e95cc852a73047e50:RentACar.Dal/Concrete/AracManager.cs
         {
             _context = new RentContext();
         }

@@ -1,4 +1,7 @@
-﻿using System;
+﻿using RentACar.Bll;
+using RentACar.Dal.Concrete;
+using RentACar.Entity;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +18,22 @@ namespace RentACar.WinFormUI
         public FormAnasayfa()
         {
             InitializeComponent();
+        }
+        AracController arac = new AracController();
+        private void btnKirala_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            RentContext context = new RentContext();
+            IEnumerable<Arac> araclar = context.Araclar.ToList();
+            foreach (var gelen in araclar)
+            {
+                comboBox1.Items.Add(gelen.Model+"-Km:"+gelen.Kilometre);
+            }
+            
         }
     }
 }
