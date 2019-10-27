@@ -10,7 +10,7 @@ namespace RentACar.Dal.Concrete
 {
     public class AracManager
     {
-        private RentContext _context;
+        public RentContext _context;
         public AracManager()
         {
             _context = new RentContext();
